@@ -21,7 +21,7 @@ import edu.wpi.first.wpilibj.Counter;
 public class Robot extends IterativeRobot {
     /**
      * This function is run when the robot is first started up and should be
-     * used for any initialization code.
+     * used for any initialization code. 2890
      */
 	Joystick leftJoy;
 	Joystick rightJoy;
@@ -55,28 +55,24 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during autonomous
      */
     public void autonomousPeriodic() {
- /*if(Ultrasonic.Inches>=4){
+    	
 	atonClockTimer.start();
-	while(atonClockTimer.get()<=2)
-	wormTalon.set(0.75);
-	//while(atonClockTimer.hasPeriodPassed(2))
-	//pulley.set(.05);
-	while(atonClockTimer.get()>=5&&atonClockTimer.get()<=8){
+	while(atonClockTimer.get()<=.5){
+	wormTalon.set(-0.75);
+	}
 	wormTalon.set(0);
+	while(atonClockTimer.get()>=.5&&atonClockTimer.get()<=4)
+	pulley.set(.05);
+	while(atonClockTimer.get()>=4&&atonClockTimer.get()<=7){
 		leftTalon.set(.25);
 		rightTalon.set(-.25);
 		}
-	atonClockTimer.stop();
-	}
-	if(Ultrasonic.Inches<4){
-		atonClockTimerSecond.start();
 		while(atonClockTimer.get()<=1)
 			pulley.set(0.25);
 		while(atonClockTimer.get()>=1&&atonClockTimer.get()<=5)
 			pulley.set(-0.35);
-		atonClockTimerSecond.stop();
-			}
-	*/
+			
+	atonClockTimerSecond.stop();
 		}
     /**
      * This function is called periodically during operator control
@@ -101,8 +97,7 @@ public class Robot extends IterativeRobot {
         	pulley.set(0.0);
         }
         if(leftJoy.getRawButton(3)){
-        	wormTalon.set(0.25);
-        }
+
         else if(leftJoy.getRawButton(4)){
         	wormTalon.set(-0.25);
         }
